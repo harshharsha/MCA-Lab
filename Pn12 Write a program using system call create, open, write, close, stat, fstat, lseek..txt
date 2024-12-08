@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <string.h>
+void main()
+{
+char buf[5];
+int c =creat("sample_file.txt", O_WRONLY);
+int a =open("sample_file.txt", O_WRONLY);
+write(a,"Unix Lab", strlen("UNIX Lab"));
+close(a);
+int b=open("sample_file.txt",O_RDONLY);
+lseek(b,5,SEEK_CUR);
+read(b,buf,3);
+printf("characters read: %s\n", buf);
+struct stat s;
+stat("sample_file.txt", &s);
+printf("st_mode=%o\n",s.st_mode);
+printf("st_mtime=%ld\n", s.st_mtime);
+}

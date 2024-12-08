@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+void main()
+{
+char buf;
+int file_one, file_two;
+file_one = open("one.txt", O_RDONLY);
+if(file_one == -1)
+{
+printf("Error opening file \n");
+close(file_one);
+return;
+}
+file_two =open("second_file.txt", O_WRONLY);
+while(read(file_one,&buf,1))
+{
+write(file_two,&buf,1);
+}
+printf("Copy complete\n");
+close(file_one);
+close(file_two);
+}

@@ -1,0 +1,8 @@
+$nano program9.sh
+if [ $# -eq 3 ]
+then
+cat $1 $2 $3 > merged.txt
+echo "files merged and named merged.txt"
+else
+echo "supply exactly three files"
+fi

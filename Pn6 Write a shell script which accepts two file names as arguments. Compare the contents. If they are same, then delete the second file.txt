@@ -1,0 +1,17 @@
+$nano program6.sh
+echo "enter the first file name"
+read file1
+echo "enter the second file name"
+read file2
+if [ -f $file1 ]
+then
+if cmp $file1 $file2
+then
+echo " the content are the same deleting the second file"
+rm $file2
+else
+echo "the content are different"
+fi
+else
+echo "file not found"
+fi

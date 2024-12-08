@@ -1,0 +1,8 @@
+
+$nano program5a.sh
+
+fi
+if
+done
+print
+grep -c -E "^.{2}$" program5a.sh

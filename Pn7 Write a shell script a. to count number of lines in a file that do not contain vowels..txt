@@ -1,0 +1,16 @@
+a. To count number of lines that do not contain vowels.
+$nano program7a.sh
+echo "enter the filename"
+read file
+count=0
+awk '$0!~/[aeiou]/{ count++ }
+END{printf "the number of lines without vowels are : %d\n", count}' $file
+
+b. to count number of characters, words, lines in a given file.
+$nano program7b.sh
+echo "enter the filename:"
+read file
+chars=$(wc -m < "$file")
+words=$(wc -w < "$file")
+lines=$(wc -l < "$file")
+echo "the file has $chars characters, $words words and $lines lines"

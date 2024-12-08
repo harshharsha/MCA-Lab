@@ -1,0 +1,5 @@
+$nano program10.sh
+#!/bin/bash
+# This script prints the list of users currently logged in
+echo "The list of users currently logged in is:"
+who | awk '{print $1, $2, $3, $4}'

@@ -1,0 +1,13 @@
+$nano program4.sh
+echo " enter the file name :"
+read file
+set $file
+for x in $file
+do
+if [ ! -f$x ]
+then
+echo " file not found "
+continue
+fi
+tr '[a-z]' '[A-Z]' < $x
+done

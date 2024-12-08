@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+int main()
+{
+int fd;
+struct flock lock;
+fd = open("three.txt",O_WRONLY);
+if(fd == -1)
+{
+printf("Error opening file");
+return;
+}
+memset(&lock,0,sizeof(lock));
+lock.l_type=F_WRLCK;
+lock.l_whence = SEEK_SET;
+lock.l_start = 0;
+lock.l_len=0;
+if(fcntl(fd,F_SETLK, &lock) == -1)
+{
+perror("Failed to acquire lock");
+exit(1);
+}
+dprintf(fd,"Locked file \n");
+lock.l_type=F_UNLCK;
+if(fcntl(fd,F_SETLK, &lock) == -1)
+{
+perror("Failed to release lock");
+exit(1);
+}
+close(fd);
+return 0;
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+int main()
+{
+int fd[2],n;
+char buf[10];
+pid_t P;
+pipe(fd);
+P = fork();
+if (P > 0)
+{
+printf("Parent passing value to the child \n");
+write(fd[1],"\n hello \n", 10);
+wait(NULL);
+}
+else
+{
+printf("\n child printing received message:\n");
+n=read(fd[0],buf,10);
+write(1,buf,n);
+}
+}
