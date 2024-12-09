@@ -10,3 +10,28 @@ echo -e "-------------"
 grep -c "$i" $*
 echo -e "-------------"
 done
+
+Output
+mca@mca-ThinkCentre-M90t-Gen-3:~/renuka/part4$ sh program3.sh
+
+Enter the number of files:
+
+3
+
+Enter the 3 files :
+
+demo test1.txt test2.txt
+
+word = vegetables
+
+------------------------------
+
+demo:1
+
+test1.txt:0
+
+test2.txt:0
+
+------------------------------
+
+word = tomato
