@@ -9,3 +9,10 @@ ls -l $file
 fi
 fi
 done
+
+Output
+mca@mca-ThinkCentre-M90t-Gen-3:~/renuka/partA$ sh program2.sh
+
+the list of files with read, write and execution permissions
+
+-rwxrwxr-x 1 mca mca 36 Oct 23 10:20 demo
