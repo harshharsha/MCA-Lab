@@ -14,3 +14,50 @@ chars=$(wc -m < "$file")
 words=$(wc -w < "$file")
 lines=$(wc -l < "$file")
 echo "the file has $chars characters, $words words and $lines lines"
+
+Output:
+
+$ sh program7.sh
+
+enter the filename
+
+xy.txt
+
+the number of lines without vowels are : 1
+
+$ cat xy.txt
+Welcome to UNIX programming
+
+THRUGH
+
+b. to count number of characters, words, lines in a given file.
+
+$nano program7b.sh
+
+echo "enter the filename:"
+
+read file
+
+chars=$(wc -m < "$file")
+
+words=$(wc -w < "$file")
+
+lines=$(wc -l < "$file")
+
+echo "the file has $chars characters, $words words and $lines lines"
+
+Output:
+
+$ sh program7b.sh
+
+enter the filename:
+
+xy.txt
+
+the file has 43 characters, 5 words and 2 lines
+
+[exam1@localhost ~]$ cat xy.txt
+
+Welcome to UNIX programming
+
+THRVJKLGHAEIOU
