@@ -11,3 +11,14 @@ continue
 fi
 tr '[a-z]' '[A-Z]' < $x
 done
+
+Output
+$cat > abc
+
+abcdefgh
+
+$sh program4.sh
+
+Enter the file name: abc
+
+ABCDEFGH
