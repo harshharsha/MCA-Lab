@@ -6,3 +6,25 @@ if
 done
 print
 grep -c -E "^.{2}$" program5a.sh
+
+output
+
+fi
+
+If
+
+b.
+
+$nano program5b.sh
+
+Echo “Welcome tothenewworld”
+
+Output:
+
+mca@mca-ThinkCentre-M90t-Gen-3:~/renuka/partA$ nano program8.sh
+
+mca@mca-ThinkCentre-M90t-Gen-3:~/renuka/partA$ nano program5b.sh
+
+mca@mca-ThinkCentre-M90t-Gen-3:~/renuka/partA$ grep " . *" program5b.sh
+
+echo "Welcome to new world"
